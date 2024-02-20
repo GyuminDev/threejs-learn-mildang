@@ -8,6 +8,7 @@ export default function Home() {
           03. first-threejs-project
         </Link>
         <Link href="/lessons/transform-objects">04. transform-objects</Link>
+        <Link href="/lessons/animation">04. animation</Link>
       </li>
     </ul>
   );
