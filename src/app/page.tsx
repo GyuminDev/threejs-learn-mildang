@@ -9,6 +9,7 @@ export default function Home() {
         </Link>
         <Link href="/lessons/transform-objects">04. transform-objects</Link>
         <Link href="/lessons/animation">04. animation</Link>
+        <Link href="/lessons/camera">05. camera</Link>
       </li>
     </ul>
   );
