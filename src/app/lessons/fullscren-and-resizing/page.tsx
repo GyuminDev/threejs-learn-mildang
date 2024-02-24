@@ -1,11 +1,14 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { css } from '../../../../styled-system/css';
+import { Typography } from '@/app/components/typography';
 
 function Page() {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   const el = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -104,14 +107,17 @@ function Page() {
         // @ts-ignore
         document.fullscreenElement || document.webkitFullscreenElement;
 
+      const container = canvas.parentElement;
+
       if (!fullscreenElement) {
-        if (canvas.requestFullscreen) {
-          canvas.requestFullscreen();
+        if (container?.requestFullscreen) {
+          container.requestFullscreen();
           // @ts-ignore
-        } else if (canvas.webkitRequestFullscreen) {
+        } else if (container.webkitRequestFullscreen) {
           // @ts-ignore
-          canvas.webkitRequestFullscreen();
+          container.webkitRequestFullscreen();
         }
+        setIsFullscreen(true);
       } else {
         if (document.exitFullscreen) {
           document.exitFullscreen();
@@ -120,6 +126,7 @@ function Page() {
           // @ts-ignore
           document.webkitExitFullscreen();
         }
+        setIsFullscreen(false);
       }
     };
 
@@ -133,16 +140,41 @@ function Page() {
   }, []);
 
   return (
-    <canvas
+    <div
       className={css({
-        display: 'block',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        outline: 'none',
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
       })}
-      ref={el}
-    ></canvas>
+    >
+      <header
+        className={css({
+          position: 'absolute',
+          top: '0',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          mt: '30px',
+          color: 'white',
+          zIndex: 10,
+        })}
+      >
+        <Typography bold level="h2">
+          {isFullscreen ? 'Fullscreen' : 'double click to fullscreen'}
+        </Typography>
+      </header>
+      <canvas
+        className={css({
+          display: 'block',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          outline: 'none',
+        })}
+        ref={el}
+      ></canvas>
+    </div>
   );
 }
 
