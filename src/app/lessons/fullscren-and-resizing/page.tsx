@@ -68,10 +68,10 @@ function Page() {
     /**
      * Animate
      */
-    const clock = new THREE.Clock();
+    // const clock = new THREE.Clock();
 
     const tick = () => {
-      const elapsedTime = clock.getElapsedTime();
+      // const elapsedTime = clock.getElapsedTime();
 
       // Update controls
       controls.update();
@@ -101,18 +101,23 @@ function Page() {
 
     const doubleClick = () => {
       const fullscreenElement =
+        // @ts-ignore
         document.fullscreenElement || document.webkitFullscreenElement;
 
       if (!fullscreenElement) {
         if (canvas.requestFullscreen) {
           canvas.requestFullscreen();
+          // @ts-ignore
         } else if (canvas.webkitRequestFullscreen) {
+          // @ts-ignore
           canvas.webkitRequestFullscreen();
         }
       } else {
         if (document.exitFullscreen) {
           document.exitFullscreen();
+          // @ts-ignore
         } else if (document.webkitExitFullscreen) {
+          // @ts-ignore
           document.webkitExitFullscreen();
         }
       }
