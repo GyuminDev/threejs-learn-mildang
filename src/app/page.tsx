@@ -40,6 +40,9 @@ export default function Home() {
           <li>
             <Link href="/lessons/camera">06. camera</Link>
           </li>
+          <li>
+            <Link href="/lessons/fullscren-and-resizing">07. Fullscren and Resizing</Link>
+          </li>
         </ul>
       </nav>
     </section>

@@ -1,1 +1,7 @@
 @layer reset, base, tokens, recipes, utilities;
+
+html,
+body {
+    /*fullscreen-and-resizing*/
+    overflow: hidden;
+}
