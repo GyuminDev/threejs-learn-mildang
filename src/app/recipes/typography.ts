@@ -2,7 +2,7 @@ import { cva, type RecipeVariantProps } from '../../../styled-system/css';
 import { defineRecipe } from '@pandacss/dev';
 
 export const typographyRecipe = defineRecipe({
-  className: '',
+  className: 'typography',
   variants: {
     variant: {
       D1: {
@@ -123,9 +123,6 @@ export const typographyRecipe = defineRecipe({
   },
   defaultVariants: {
     variant: 'body1-R',
-    bold: false,
-    italic: false,
-    underline: false,
   },
 });
 
