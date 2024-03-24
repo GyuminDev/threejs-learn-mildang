@@ -45,6 +45,9 @@ export default function Home() {
               07. Fullscren and Resizing
             </Link>
           </li>
+          <li>
+            <Link href="/lessons/geometries">08. Geometries</Link>
+          </li>
         </ul>
       </nav>
     </section>
