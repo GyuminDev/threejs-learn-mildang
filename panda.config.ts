@@ -1,4 +1,5 @@
 import { defineConfig } from '@pandacss/dev';
+import { textStyles } from '@/app/theme/text-styles';
 
 export default defineConfig({
   // Whether to use css reset
@@ -16,28 +17,7 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
-      textStyles: {
-        headline1: {
-          description:
-            'In the type scale, headlines span from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.',
-          value: {
-            fontWeight: '300',
-            // yes! you can change the font size based on the writing mode
-            fontSize: '5.5625rem',
-            lineHeight: '7rem',
-            letterSpacing: '-0.015em',
-          },
-        },
-        headline2: {
-          description: 'Oversized headlines in website.',
-          value: {
-            fontWeight: '300',
-            fontSize: '3.625rem',
-            lineHeight: '4.5rem',
-            letterSpacing: '-0.005em',
-          },
-        },
-      },
+      textStyles,
     },
   },
 
