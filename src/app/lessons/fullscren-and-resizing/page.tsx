@@ -158,7 +158,7 @@ function Page() {
           zIndex: 10,
         })}
       >
-        <Typography bold level="h2">
+        <Typography bold as="h1" variant="h1">
           {isFullscreen ? 'Fullscreen' : 'double click to fullscreen'}
         </Typography>
       </header>

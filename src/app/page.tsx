@@ -16,7 +16,7 @@ export default function Home() {
       })}
     >
       <header>
-        <Typography bold level="h2">
+        <Typography bold as="h1" variant="h1">
           Gyumin's Three.js Journey
         </Typography>
       </header>
@@ -41,7 +41,9 @@ export default function Home() {
             <Link href="/lessons/camera">06. camera</Link>
           </li>
           <li>
-            <Link href="/lessons/fullscren-and-resizing">07. Fullscren and Resizing</Link>
+            <Link href="/lessons/fullscren-and-resizing">
+              07. Fullscren and Resizing
+            </Link>
           </li>
         </ul>
       </nav>
