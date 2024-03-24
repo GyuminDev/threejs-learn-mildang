@@ -30,6 +30,7 @@ function Page() {
     // });
     const debugObject = {};
 
+    // @ts-ignore
     debugObject.spin = () => {
       gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + Math.PI * 2 });
     };
@@ -66,6 +67,7 @@ function Page() {
       console.log(value.getHexString());
     });
 
+    // @ts-ignore
     debugObject.subdivision = 2;
     gui
       .add(debugObject, 'subdivision')
@@ -78,8 +80,11 @@ function Page() {
           1,
           1,
           1,
+          // @ts-ignore
           debugObject.subdivision,
+          // @ts-ignore
           debugObject.subdivision,
+          // @ts-ignore
           debugObject.subdivision,
         );
       });
