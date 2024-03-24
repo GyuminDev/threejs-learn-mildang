@@ -51,6 +51,9 @@ export default function Home() {
           <li>
             <Link href="/lessons/debug-ui">09. Debug-UI</Link>
           </li>
+          <li>
+            <Link href="/lessons/textures">10. Textures</Link>
+          </li>
         </ul>
       </nav>
     </section>
