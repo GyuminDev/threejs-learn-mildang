@@ -1,6 +1,8 @@
 import { cva, type RecipeVariantProps } from '../../../styled-system/css';
+import { defineRecipe } from '@pandacss/dev';
 
-export const typographyRecipe = cva({
+export const typographyRecipe = defineRecipe({
+  className: '',
   variants: {
     variant: {
       D1: {
@@ -119,8 +121,14 @@ export const typographyRecipe = cva({
       },
     },
   },
+  defaultVariants: {
+    variant: 'body1-R',
+    bold: false,
+    italic: false,
+    underline: false,
+  },
 });
 
-export type TypographyVariantProps = RecipeVariantProps<
-  typeof typographyRecipe
->;
+// export type TypographyVariantProps = RecipeVariantProps<
+//   typeof typographyRecipe
+// >;

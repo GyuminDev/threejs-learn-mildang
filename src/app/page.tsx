@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Typography } from '@/app/components/typography';
 import { vstack } from '../../styled-system/patterns';
 import { css } from '../../styled-system/css';
+import { Typography } from '@/app/components/typography';
 
 export default function Home() {
   return (
@@ -16,7 +16,14 @@ export default function Home() {
       })}
     >
       <header>
-        <Typography bold as="h1" variant="h1">
+        {/*<h1*/}
+        {/*  className={css({*/}
+        {/*    textStyle: 'h1',*/}
+        {/*  })}*/}
+        {/*>*/}
+        {/*  Gyumin's Three.js Journey*/}
+        {/*</h1>*/}
+        <Typography variant="h1" as="h1">
           Gyumin's Three.js Journey
         </Typography>
       </header>
