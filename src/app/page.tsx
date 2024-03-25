@@ -16,14 +16,24 @@ export default function Home() {
       })}
     >
       <header>
-        {/*<h1*/}
-        {/*  className={css({*/}
-        {/*    textStyle: 'h1',*/}
-        {/*  })}*/}
-        {/*>*/}
-        {/*  Gyumin's Three.js Journey*/}
-        {/*</h1>*/}
-        <Typography variant="h1" as="h1">
+        <h1
+          className={css({
+            textStyle: 'h1',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: 'color',
+          })}
+        >
+          Gyumin's Three.js Journey
+        </h1>
+        <Typography
+          variant="h1"
+          as="h1"
+          bold
+          className={css({
+            textAlign: 'center',
+          })}
+        >
           Gyumin's Three.js Journey
         </Typography>
       </header>
