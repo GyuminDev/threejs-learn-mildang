@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { css } from '../../../../styled-system/css';
+import { GUI } from 'lil-gui';
 import ColorDoorTexture from '@/assets/textures/door/color.jpg';
 import AlphaDoorTexture from '@/assets/textures/door/alpha.jpg';
 import HeightDoorTexture from '@/assets/textures/door/height.jpg';
@@ -14,6 +15,7 @@ import RoughnessDoorTexture from '@/assets/textures/door/roughness.jpg';
 import CheckerBoard1024Texture from '@/assets/textures/checkerboard-1024x1024.png';
 import CheckerBoard8Texture from '@/assets/textures/checkerboard-8x8.png';
 import MineCraftTexture from '@/assets/textures/minecraft.png';
+import * as dat from 'lil-gui';
 
 function Page() {
   const el = useRef<HTMLCanvasElement>(null);
@@ -76,16 +78,29 @@ function Page() {
 
     const mineCraftTexture = textureLoader.load(MineCraftTexture.src);
     // color space conversion for sRGB
-    mineCraftTexture.colorSpace = THREE.SRGBColorSpace;
+    // mineCraftTexture.colorSpace = THREE.SRGBColorSpace;
     // mineCraftTexture.magFilter = THREE.NearestFilter;
+    // mineCraftTexture.minFilter = THREE.NearestFilter;
     mineCraftTexture.generateMipmaps = false;
-    mineCraftTexture.minFilter = THREE.NearestFilter;
 
     // const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
     // const material = new THREE.MeshBasicMaterial({ map: checkerBoard8Texture });
     const material = new THREE.MeshBasicMaterial({ map: mineCraftTexture });
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
+
+    const gui = new dat.GUI();
+
+    // dubug ui magFilter, minFilter
+    gui
+      .add(mineCraftTexture, 'magFilter', {
+        NearestFilter: THREE.NearestFilter,
+        LinearFilter: THREE.LinearFilter,
+      })
+      .name('magFilter')
+      .onChange(() => {
+        mineCraftTexture.needsUpdate = true;
+      });
 
     /**
      * Sizes

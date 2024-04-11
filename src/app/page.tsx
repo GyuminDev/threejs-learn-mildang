@@ -71,6 +71,9 @@ export default function Home() {
           <li>
             <Link href="/lessons/textures">10. Textures</Link>
           </li>
+          <li>
+            <Link href="/lessons/uv-unwrapping">10-1. UV-Unwrapping</Link>
+          </li>
         </ul>
       </nav>
     </section>

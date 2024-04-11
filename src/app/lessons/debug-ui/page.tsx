@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { css } from '../../../../styled-system/css';
 import gsap from 'gsap';
 import * as dat from 'lil-gui';
-import { GUI } from 'lil-gui';
+// import { GUI } from 'lil-gui';
 
 function Page() {
   const el = useRef<HTMLCanvasElement>(null);
