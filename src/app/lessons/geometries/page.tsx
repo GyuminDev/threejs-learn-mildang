@@ -61,17 +61,45 @@ function Page() {
     //   0, // 세 번째 정점
     // ]);
 
-    // 50개의 삼각형 생성 (450개의 값)
-    const count = 50;
-    const positionsArray = new Float32Array(count * 3 * 3);
-    for (let i = 0; i < count * 3 * 3; i++) {
-      positionsArray[i] = (Math.random() - 0.5) * 4;
-    }
+    // Create an empty BufferGeometry
+    // const geometry = new THREE.BufferGeometry();
 
+    // Create a Float32Array containing the vertices position (3 by 3)
+    const positionsArray = new Float32Array([
+      0,
+      0,
+      0, // First vertex
+      0,
+      1,
+      0, // Second vertex
+      1,
+      0,
+      0, // Third vertex
+      // 1, 0, 0, // First vertex
+      // 0, 1, 0, // Second vertex
+      1,
+      1,
+      0, // Third vertex
+    ]);
+
+    const indices = [0, 1, 2, 1, 3, 2];
+
+    // Create the attribute and name it 'position'
     const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
-
     geometry.setAttribute('position', positionsAttribute);
+    geometry.setIndex(indices);
 
+    // // 50개의 삼각형 생성 (450개의 값)
+    // const count = 50;
+    // const positionsArray = new Float32Array(count * 3 * 3);
+    // for (let i = 0; i < count * 3 * 3; i++) {
+    //   positionsArray[i] = (Math.random() - 0.5) * 4;
+    // }
+    //
+    // const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
+    //
+    // geometry.setAttribute('position', positionsAttribute);
+    //
     const material = new THREE.MeshBasicMaterial({
       color: 0xff0000,
       wireframe: true,

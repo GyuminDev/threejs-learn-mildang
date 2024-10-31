@@ -74,6 +74,18 @@ export default function Home() {
           <li>
             <Link href="/lessons/uv-unwrapping">10-1. UV-Unwrapping</Link>
           </li>
+          <li>
+            <Link href="/lessons/materials">11. Materials</Link>
+          </li>
+          <li>
+            <Link href="/lessons/3d-text">12. 3D Text</Link>
+          </li>
+          <li>
+            <Link href="/lessons/lights">13. Lights</Link>
+          </li>
+          <li>
+            <Link href="/lessons/shadows">14. Shadows</Link>
+          </li>
         </ul>
       </nav>
     </section>
